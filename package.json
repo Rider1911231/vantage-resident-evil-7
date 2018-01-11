@@ -8,7 +8,7 @@
     "scid": "e70c0100-223e-46e4-bfa5-358d26d7aa7d",
     "thumbnailUrl": "https://store-images.s-microsoft.com/image/apps.59188.13510798887575711.b2c5d03b-ad97-4494-8c6b-6343b5e1d0e8.2486e1e3-9c82-498a-a7b1-0ba1c0506485?w=128&h=128",
     "name": "Campaign Editor",
-    "containerFilter": "/^SaveData\\d+$/"
+    "containerFilter": "/^SaveData\\d*.+$/"
   },
   "repository": {
     "type": "git",
