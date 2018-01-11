@@ -308,8 +308,7 @@ export class TableListEntryId implements ListEntryId {
         if(io != null) {
             this.murmurHash = io.readUInt32();
             this.type = io.readInt32();
-            if(this.type === -1) { // means root node
-            
+            if(this.type === -1) {          
                 this.type = io.readInt32();
                 this.hasSubType = true;
             }
@@ -343,7 +342,6 @@ export class TableListEntry implements ListEntry {
     public entryId : TableListEntryId;
     public hasChildren : boolean;
     public name : string;
-    //public typeHash : number;
     public tableId : number;
 
     public headerSize: number;
@@ -358,6 +356,7 @@ export class TableListEntry implements ListEntry {
         }
         return -1;
     }
+
     constructor(io?: ObjectStream) {
         if(io != null) {
             io.alignTo(4);
@@ -369,7 +368,6 @@ export class TableListEntry implements ListEntry {
                 this.name = propertiesHashes[id.murmurHash];
             }
 
-            //this.typeHash = id.murmurHash;
             this.entryId = id;
         }
     }
@@ -472,7 +470,6 @@ export class TableListEntry implements ListEntry {
         this.actualCount = this.children.length;
     }
 
-    
     public findChildByName(name: string, key?:number): ListEntry[]  {
         let result = this.children.filter(c=>c.typeHash === murmurHash3Str(name));
         if(key != null && result.length > 1) {
