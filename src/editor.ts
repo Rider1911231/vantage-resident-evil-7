@@ -1,12 +1,11 @@
-//import { Blowfish, MODE, PADDING, TYPE } from "egoroof-blowfish";
-//import {egoroof_blowfish} from "egoroof-blowfish";
-import { observable, computedFrom, newInstance } from 'aurelia-framework';
+import { computedFrom, newInstance } from 'aurelia-framework';
 import * as Blowfish from "egoroof-blowfish";
 
 import { Stream, SeekOrigin } from 'libvantage';
 import {  murmurHash, murmurHash3Str } from './murmur3';
 import { Savegame, ElementList } from './savedata';
-import { InventoryCollection, DictionaryCollection } from './collections';
+import { DictionaryCollection } from './collections';
+import { InventoryCollection } from './inventory';
 import inventoryItemList from './items';
 import {ObjectType} from './object';
 
